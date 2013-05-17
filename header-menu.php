@@ -7,10 +7,15 @@
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
-          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-collapse collapse NAVBAR-TOP' ) ); ?>
+          <?php if ( has_nav_menu( 'primary' ) ) : ?>
+          <?php wp_nav_menu( array( 'menu' => 'primary', 'container_class' => 'nav-collapse collapse', 'menu_class' => 'nav' ) ) ; ?>
+          <?php else : ?>
+          <?php wp_nav_menu( array( 'menu' => 'primary', 'menu_class' => 'nav-collapse collapse NAVBAR-TOP' ) ); ?>
+          <script>
+          $(".NAVBAR-TOP ul").addClass('nav');
+    	  </script>
+    	  <?php endif; ?>
         </div>
-        <script>
-        $(".NAVBAR-TOP ul").addClass('nav');
-    	</script>
+        
       </div>
     </div>

@@ -20,7 +20,7 @@
       }
     </style>
     <link href="<?php echo $pbs_dir; ?>/css/bootstrap-responsive.css" rel="stylesheet">
-
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>

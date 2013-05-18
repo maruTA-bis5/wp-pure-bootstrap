@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Front Page Template
+ * Template Name: "Basic Marketing Site" Front Page Template
  */ ?>
 <?php $pbs_dir = get_template_directory_uri(); ?><!DOCTYPE html>
 <html <?php language_attributes();?>>

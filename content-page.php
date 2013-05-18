@@ -16,5 +16,7 @@
 	 	$("#pager-<?php the_ID(); ?> a").wrap('<li></li>');
 		</script>
 	 </div>
-	
+	<footer class="entry-meta">
+		<?php edit_post_link( __( 'Edit', 'pure_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer>
 </article>

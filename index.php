@@ -14,7 +14,7 @@
         <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
       </div>
       	  
-      <?php get_template_part( 'sidebar', 'front' ); ?>
+      <?php get_sidebar( 'front' ); ?>
       
       <hr>
 

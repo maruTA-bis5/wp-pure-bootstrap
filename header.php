@@ -12,6 +12,28 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <!-- Le styles -->
+    <?php $header_image = get_header_image();
+      if ( ! empty( $header_image ) ) : ?>
+    <style type="text/css">
+   	  .site-custom-header {
+   	  	  background-image: url(<?php echo $header_image; ?>);
+   	  	  /*width:<?php echo get_custom_header()->width; ?>px;
+   	  	  height:<?php echo get_custom_header()->height; ?>px;*/
+   	  	  width: auto;
+   	  	  height: auto;
+   	  	  background-size:100% auto;
+   	  	  margin:0 auto;
+   	  }
+	  .site-title a:hover, .site-title a {
+	  	  text-decoration: none;
+	  }
+   	  @media screen and (max-width: 960px) {
+   	  	  .site-custom-header h1, .site-custom-header h2 {
+   	  	  	  display: none;
+   	  	  }
+   	  }
+   	</style>
+    <?php endif; ?>
     <link href="<?php echo $pbs_dir; ?>/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {

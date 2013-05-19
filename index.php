@@ -1,18 +1,26 @@
 <?php $pbs_dir = get_template_directory_uri(); ?><!DOCTYPE html>
 <html <?php language_attributes();?>>
 <?php get_header(); ?>
-<body <?php body_class(); ?>>
+<body <?php body_class( 'container-fluid' ); ?>>
 
       <?php get_template_part( 'header', 'menu' ); ?>
       	  
-      <div class="container">
+      <div class="container-fluid">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-      </div>
+      <?php $header_image = get_header_image();
+      	if ( ! empty( $header_image ) ) : ?>
+      <header class="hero-unit site-header site-custom-header" id="masthead">
+      <?php else: ?>
+      <header class="hero-unit site-header" id="masthead">
+      <?php endif; ?>
+      	<hgroup>
+          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' );?></a></h1>
+          <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+        </hgroup>
+        
+        
+      </header>
       	  
       <?php get_sidebar( 'front' ); ?>
       

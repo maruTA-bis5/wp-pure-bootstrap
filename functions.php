@@ -2,6 +2,8 @@
 if ( ! isset( $content_width ) )
     $content_width = 800;
 
+require( get_template_directory() . '/inc/custom-header.php' );
+
 function pure_bootstrap_setup() {
     //load_theme_textdomain( 'pure_bootstrap', get_template_directory() . '/languages' );
     

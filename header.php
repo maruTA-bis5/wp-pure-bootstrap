@@ -17,8 +17,6 @@
     <style type="text/css">
    	  .site-custom-header {
    	  	  background-image: url(<?php echo $header_image; ?>);
-   	  	  /*width:<?php echo get_custom_header()->width; ?>px;
-   	  	  height:<?php echo get_custom_header()->height; ?>px;*/
    	  	  width: auto;
    	  	  height: auto;
    	  	  background-size:100% auto;

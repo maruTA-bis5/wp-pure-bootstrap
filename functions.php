@@ -2,6 +2,8 @@
 if ( ! isset( $content_width ) )
     $content_width = 800;
 
+require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
 require( get_template_directory() . '/inc/custom-header.php' );
 
 function pure_bootstrap_setup() {
@@ -65,4 +67,10 @@ function wp_widget_num_class( $index = 1, $prefix = 'widgets-', $suffix = '', $e
     } else {
         return $widget_num_class;
     }
+}
+
+function pbs_get_layout() {
+	settings_fields( 'sample_options' );
+	$options = get_option( 'sample_theme_options' );
+	return $options['radioinput'];
 }

@@ -1,28 +1,33 @@
 <?php $pbs_dir = get_template_directory_uri(); ?><!DOCTYPE html>
 <html <?php language_attributes();?>>
 <?php get_header(); ?>
-<body <?php body_class( 'container-fluid' ); ?>>
+<body <?php body_class(); ?>>
 
-      <?php get_template_part( 'header', 'menu' ); ?>
+    <?php get_template_part( 'header', 'menu' ); ?>
       	  
-      <div class="container-fluid">
+    <div class="container">
 
-      <?php get_header( 'unit' ); ?>	  
+    <?php get_header( 'unit' ); ?>	  
 
-      <div class="row-fluid site-content">
-      	  <?php if ( have_posts() ) : ?>
+    <div class="row-fluid site-content">
+        <?php if ( is_active_sidebar( 'sidebar-main' ) ) : ?>
+        <?php get_sidebar( 'main' ); ?>
+        <div class="span10">
+        <?php else : ?>
+        <div class="span12">
+        <?php endif;?>
+
+        <?php if ( have_posts() ) : ?>
       	  
-      	  	<?php while ( have_posts() ) : the_post(); ?>
-      	  		<?php get_template_part( 'content', get_post_format() ); ?>
+      	    <?php while ( have_posts() ) : the_post(); ?>
+      	  	    <?php get_template_part( 'content', get_post_format() ); ?>
       	  	<?php endwhile; ?>
-      	  <?php endif; ?>
-      </div>
-      
-      <?php get_sidebar(); ?>
-      
-      <hr>
+        <?php endif; ?>
+        </div>
+    </div>
+    <hr>
 
-      <?php get_footer(); ?>
+    <?php get_footer(); ?>
 
     </div> <!-- /container -->
 

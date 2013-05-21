@@ -32,7 +32,37 @@
 	                        rel="bookmark"><?php the_title(); ?></a>
 			            </h2>
 			            <?php endif; ?>
+
+                        <?php if ( comments_open() ) : ?>
+                        <div class="comments-link">
+                            <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'pure_bootstrap' ) . '</span>', __( '1 Reply', 'pure_bootstrap' ), __( '% Replies', 'pure_bootstrap' ) ); ?>
+                        </div>
+                        <?php endif; ?>
     		        </header>
+                    
+                    <?php if ( is_search() ) : ?>
+                    <div class="entry-summary">
+                        <?php the_excerpt(); ?>
+                    </div>
+                    <?php else : ?>
+                    <div class="entry-content">
+                        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'pure_bootstrap' ) ); ?>
+                        <?php wp_link_pages( array(
+                            'before'    => '<ul class="pager" id="pager-'.get_the_ID().'">',
+                            'after'     => '</ul>',
+                            'next_or_number'    => 'next',
+                            'nextpagelink'  => __( 'Next page' ) . '&rarr;',
+                            'previouspagelink'  => '&larr;' . __( 'Previous page' ),
+                        ) ); ?>
+                        <script>
+                        $("#pager-<?php the_ID(); ?> a").wrap('<li></li>');
+                        </script>
+                    </div>
+                    <?php endif; ?>
+                    <footer class="entry-meta">
+                        <?php pbs_entry_meta(); ?>
+                        <?php edit_post_link( __( 'Edit', 'pure_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
+                    </footer>
 	            </article>
                 <?php endwhile; ?>
             </div>

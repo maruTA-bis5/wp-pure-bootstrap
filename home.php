@@ -64,6 +64,7 @@
                         <?php edit_post_link( __( 'Edit', 'pure_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
                     </footer>
 	            </article>
+                <hr>
                 <?php endwhile; ?>
             </div>
 

@@ -8,7 +8,7 @@
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>
-<?get_header(); ?>
+<?php get_header(); ?>
 <body <?php body_class(); ?>>
     <?php get_header( 'menu' ); ?>
 

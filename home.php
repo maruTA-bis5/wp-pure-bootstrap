@@ -35,7 +35,7 @@
 
                         <?php if ( comments_open() ) : ?>
                         <div class="comments-link">
-                            <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'pure_bootstrap' ) . '</span>', __( '1 Reply', 'pure_bootstrap' ), __( '% Replies', 'pure_bootstrap' ) ); ?>
+                            <p><?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'pure_bootstrap' ) . '</span>', __( '1 Reply', 'pure_bootstrap' ), __( '% Replies', 'pure_bootstrap' ) ); ?></p>
                         </div>
                         <?php endif; ?>
     		        </header>
